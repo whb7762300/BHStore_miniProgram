@@ -1,0 +1,23 @@
+{
+  "name": "bhstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whb7762300/BHStore_miniProgram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whb7762300/BHStore_miniProgram/issues"
+  },
+  "homepage": "https://github.com/whb7762300/BHStore_miniProgram#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.2.2",
+    "weui-miniprogram": "^1.0.3"
+  }
+}
