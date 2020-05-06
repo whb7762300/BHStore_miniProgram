@@ -1,13 +1,24 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <SearchInput></SearchInput>
+    <swiper indicator-dots autoplay circular>
+        <swiper-item wx:for="{{bannerList}}" wx:key="goods_id">
+            <image src="{{item.image_src}}" mode="widthFix" />
+        </swiper-item>
+    </swiper>
+    <view class="menu">
+        <view wx:for="{{menuItems}}" wx:key="image_src" class="menuItem">
+            <image src="{{item.image_src}}" mode="widthFix"></image>
+        </view>
+    </view>
+    <view class="content">
+        <view class="contentItem" wx:for="{{homeContent}}" wx:key="index">
+            <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+            <view class="itemPics clearFix">
+                <image src="{{pic.image_src}}" wx:for="{{item.product_list}}" wx:key="image_src"
+                    wx:for-index="j" wx:for-item="pic"
+                    mode="{{j===0?'widthFix':'scaleToFill'}}"></image>
+            </view>
+        </view>
+    </view>
 </view>

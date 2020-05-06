@@ -1,7 +1,7 @@
 import toast from "./toastUtils";
 
 if (!http) var http = {};
-const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1";
+const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1/";
 let ajaxTimes = 0;//同时网络请求的并发数量
 
 function request(url = "", params = {}, method = "POST", showLoading = true) {
@@ -31,7 +31,7 @@ function request(url = "", params = {}, method = "POST", showLoading = true) {
                     if (data.meta == null || typeof (data.meta) == "undefined") {
                         resolve(data);
                     } else if (data.meta.status === 200) {
-                        resolve(data);
+                        resolve(data.message);
                     } else {
                         reject(data.meta.msg);
                         toast.showToast(data.meta.msg);
@@ -76,7 +76,7 @@ function upload(url, filePath, formData = {}) {
                     if (data.meta == null || typeof (data.meta) == "undefined") {
                         resolve(data);
                     } else if (data.meta.status === 200) {
-                        resolve(data);
+                        resolve(data.message);
                     } else {
                         reject(data.meta.msg);
                         toast.showToast(data.meta.msg);
