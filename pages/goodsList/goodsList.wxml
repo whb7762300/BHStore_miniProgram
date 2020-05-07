@@ -1,0 +1,24 @@
+<view class="container">
+    <SearchInput />
+    <van-tabs active="{{tabActive}}" bind:change="onTabChange" sticky color="#ff2d4a">
+        <van-tab title="综合">
+            <view class="content">
+                <view class="item" wx:for="{{list}}" wx:key="goods_id">
+                    <image
+                        src="{{item.goods_small_logo||'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+                        mode="widthFix"></image>
+                    <view class="right">
+                        <text class="name">{{item.goods_name}}</text>
+                        <text class="price">¥{{item.goods_price}}</text>
+                    </view>
+                </view>
+            </view>
+        </van-tab>
+        <van-tab title="销量">
+            <view class="content">内容 2</view>
+        </van-tab>
+        <van-tab title="价格">
+            <view class="content">内容 3</view>
+        </van-tab>
+    </van-tabs>
+</view>

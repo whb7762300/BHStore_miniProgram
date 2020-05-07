@@ -3,11 +3,12 @@
     "pages/index/index",
     "pages/category/category",
     "pages/cart/cart",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/goodsList/goodsList"
   ],
   "window": {
     "backgroundColor": "#f8f8f8",
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ff2d4a",
     "navigationBarTitleText": "黑马商城",
     "navigationBarTextStyle": "white"

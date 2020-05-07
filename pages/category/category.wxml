@@ -13,11 +13,12 @@
                 <view wx:for="{{rightList}}" wx:key="cat_id">
                     <view class="title">/ {{item.cat_name}} /</view>
                     <view class="menu">
-                        <view wx:for="{{item.children}}" wx:for-item="menuItem"
-                            wx:for-index="menuIndex" wx:key="cat_id">
+                        <navigator wx:for="{{item.children}}" wx:for-item="menuItem"
+                            wx:for-index="menuIndex" wx:key="cat_id"
+                            url="/pages/goodsList/goodsList?cid={{menuItem.cat_id}}">
                             <image src="{{menuItem.cat_icon}}" mode="widthFix"></image>
                             <view>{{menuItem.cat_name}}</view>
-                        </view>
+                        </navigator>
                     </view>
                 </view>
             </view>
