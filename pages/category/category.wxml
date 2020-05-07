@@ -1,0 +1,26 @@
+<view class="container">
+    <SearchInput />
+    <view class="content">
+        <scroll-view class="left" scroll-y>
+            <view class="leftContent">
+                <view class="item {{tapIndex==index?'active':''}}" wx:for="{{list}}" wx:key="cat_id"
+                    bindtap="leftCategoryTap" mark:index="{{index}}">{{item.cat_name}}
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view class="right" scroll-y model:scroll-top="{{rightToTop}}">
+            <view class="rightContent">
+                <view wx:for="{{rightList}}" wx:key="cat_id">
+                    <view class="title">/ {{item.cat_name}} /</view>
+                    <view class="menu">
+                        <view wx:for="{{item.children}}" wx:for-item="menuItem"
+                            wx:for-index="menuIndex" wx:key="cat_id">
+                            <image src="{{menuItem.cat_icon}}" mode="widthFix"></image>
+                            <view>{{menuItem.cat_name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
